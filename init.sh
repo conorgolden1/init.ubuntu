@@ -71,6 +71,13 @@ git clone https://github.com/goldencm/init.lua.git /etc/xdg/nvim/
 
 apt install gcc g++-multilib -y
 
+# Install RipGrep
+
+curl -LO https://github.com/BurntSushi/ripgrep/releases/download/13.0.0/ripgrep_13.0.0_amd64.deb
+dpkg -i ripgrep_13.0.0_amd64.deb
+rm ripgrep_13.0.0_amd64.deb
+
+
 # Run Packer Sync
 
 nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'

@@ -16,6 +16,8 @@ a sysinit.vim initialization file
 2. Neovim
 3. Gcc
 4. Github Cli (for git authentication)
+5. Ripgrep
+
 
 ### Change Log
 
