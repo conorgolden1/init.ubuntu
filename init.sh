@@ -12,7 +12,7 @@ fi
 
 # Checks to see if we are running in a WSL instance
 
-wsl=$( [ $(grep -io Microsoft /proc/version) = "microsoft" ] ); 
+wsl=$( [ $(grep -io Microsoft /proc/version) = "microsoft" ] );
 
 
 # Install Rustup
@@ -35,7 +35,6 @@ fi
 echo "Downloading neovim : ~/.nvim/nvim.appimage"
 
 curl -o ~/.nvim/nvim.appimage -L https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
-
 chmod u+x ~/.nvim/nvim.appimage
 
 cd ~/.nvim/ && { ./nvim.appimage --appimage-extract; cd -; }
@@ -68,4 +67,26 @@ fi
 
 git clone https://github.com/goldencm/init.lua.git /etc/xdg/nvim/
 
+# Install gcc
+
+apt install gcc g++-multilib -y
+
+# Run Packer Sync
+
+nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+
+
+# Install Github Cli
+
+type -p curl >/dev/null || sudo apt install curl -y
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
+&& sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
+&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
+&& sudo apt update \
+&& sudo apt install gh -y
+
+
+# Store Github credentials
+
+gh auth login
 
