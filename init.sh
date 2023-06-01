@@ -82,6 +82,13 @@ rm ripgrep_13.0.0_amd64.deb
 
 nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 
+# Install Hack font
+
+curl -L --output hack_font.zip https://github.com/source-foundry/Hack/releases/download/v3.003/Hack-v3.003-ttf.zip
+unzip hack_font.zip
+mv -v ttf/* /usr/share/fonts/
+rm hack_font.zip
+rm -Rf ttf/
 
 # Install Github Cli
 
