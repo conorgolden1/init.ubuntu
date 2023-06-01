@@ -89,6 +89,7 @@ unzip hack_font.zip
 mv -v ttf/* /usr/share/fonts/
 rm hack_font.zip
 rm -Rf ttf/
+fc-cache -f -v
 
 # Install Github Cli
 
