@@ -68,7 +68,7 @@ if [ -d "/etc/xdg/nvim" ]; then
    echo "Removed old nvim config in /etc/xdg/nvim"
 fi
 
-git clone https://github.com/goldencm/init.lua.git /etc/xdg/nvim/
+git clone https://github.com/conorgolden1/init.lua.git /etc/xdg/nvim/
 
 # Install gcc
 
