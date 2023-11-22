@@ -90,7 +90,7 @@ else
     fi
     mv -v ttf/* "$HOME/.fonts/"
 fi
-m hack_font.zip
+rm hack_font.zip
 rm -Rf ttf/
 
 
