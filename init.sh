@@ -79,7 +79,7 @@ rm ripgrep_13.0.0_amd64.deb
 
 # Install Hack font
 
-curl -L --output hack_font.zip https://github.com/source-foundry/Hack/releases/download/v3.003/Hack-v3.003-ttf.zip
+curl -L --output hack_font.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.0/Hack.zip
 unzip hack_font.zip
 if $wsl; then
     mv -v ttf/* /usr/share/fonts/
