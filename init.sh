@@ -124,7 +124,7 @@ nvm install node
 nvm use node
 
 # Install tree-sitter
-npm install tree-sitter
+npm install -g tree-sitter
 
 # Run Packer Sync
 
