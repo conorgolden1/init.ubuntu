@@ -26,6 +26,7 @@ syncing appears to run into some errors that I will work out in the future.
 7. Node (Most recent version of node)
 8. Hack Font
 9. [FD](https://github.com/sharkdp/fd)
+10. Build-Essential
 
 # Post Installation
 After running you must change font in terminal profile.

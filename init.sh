@@ -14,6 +14,9 @@ fi
 
 wsl=$( [ $(grep -io Microsoft /proc/version) = "microsoft" ] );
 
+# Install build-essential
+apt-get install build-essential
+
 
 # Install Rustup
 
