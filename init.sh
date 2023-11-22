@@ -77,11 +77,6 @@ curl -LO https://github.com/BurntSushi/ripgrep/releases/download/13.0.0/ripgrep_
 dpkg -i ripgrep_13.0.0_amd64.deb
 rm ripgrep_13.0.0_amd64.deb
 
-
-# Run Packer Sync
-
-nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
-
 # Install Hack font
 
 curl -L --output hack_font.zip https://github.com/source-foundry/Hack/releases/download/v3.003/Hack-v3.003-ttf.zip
@@ -116,4 +111,11 @@ export NVM_DIR="$HOME/.nvm"
 #Install Node
 nvm install node
 nvm use node
+
+
+# Run Packer Sync
+
+nvim --headless -c 'autocmd User PackerComplete quitall'
+nvim --headless -c 'PackerSync'
+nvim --headless -c 'PackerSync'
 
