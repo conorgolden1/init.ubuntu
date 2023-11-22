@@ -25,6 +25,7 @@ syncing appears to run into some errors that I will work out in the future.
 6. Nvm (Node version manager)
 7. Node (Most recent version of node)
 8. Hack Font
+9. [FD](https://github.com/sharkdp/fd)
 
 # Post Installation
 After running you must change font in terminal profile.

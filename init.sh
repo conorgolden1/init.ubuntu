@@ -127,3 +127,5 @@ nvim --headless -c 'autocmd User PackerComplete quitall'
 nvim --headless -c 'PackerSync'
 nvim --headless -c 'PackerSync'
 
+# Install fd
+apt install fd-find
