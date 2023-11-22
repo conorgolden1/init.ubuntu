@@ -6,7 +6,7 @@ or may not be compatible with another linux distro
 You need at least WSL2 or Ubuntu. This script must be run with root privliges
 for proper installation.
 
-# Warning
+## Warning
 This script by default will attempt to install a neovim config (mine by
 default) in the /etc/xdg/nvim directory. This will install the neovim config
 system wide. If that is your desired behavior then your neovim config requires
@@ -27,8 +27,9 @@ syncing appears to run into some errors that I will work out in the future.
 8. Hack Font
 9. [FD](https://github.com/sharkdp/fd)
 10. Build-Essential
+11. Treesitter
 
-# Post Installation
+## Post Installation
 After running you must change font in terminal profile.
 
 
