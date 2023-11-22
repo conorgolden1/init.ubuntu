@@ -134,3 +134,6 @@ nvim --headless -c 'PackerSync'
 
 # Install fd
 apt install fd-find
+
+# Install tmux
+apt  install tmux

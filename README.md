@@ -25,6 +25,7 @@ a sysinit.vim initialization file
 9. [FD](https://github.com/sharkdp/fd)
 10. Build-Essential
 11. Treesitter
+12. Tmux
 
 ## Post Installation
 After running you must change font in terminal profile. Currently you need to run PackerSync twice after opening neovim. The headless
