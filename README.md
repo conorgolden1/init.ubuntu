@@ -12,9 +12,6 @@ default) in the /etc/xdg/nvim directory. This will install the neovim config
 system wide. If that is your desired behavior then your neovim config requires
 a sysinit.vim initialization file
 
-Currently you need to run PackerSync twice after opening neovim. The headless
-syncing appears to run into some errors that I will work out in the future.
-
 ### Installed Apps
 
 1. Rustup
@@ -30,6 +27,8 @@ syncing appears to run into some errors that I will work out in the future.
 11. Treesitter
 
 ## Post Installation
-After running you must change font in terminal profile.
+After running you must change font in terminal profile. Currently you need to run PackerSync twice after opening neovim. The headless
+syncing appears to run into some errors that I will work out in the future.
+
 
 
