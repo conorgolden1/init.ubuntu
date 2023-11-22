@@ -81,10 +81,18 @@ rm ripgrep_13.0.0_amd64.deb
 
 curl -L --output hack_font.zip https://github.com/source-foundry/Hack/releases/download/v3.003/Hack-v3.003-ttf.zip
 unzip hack_font.zip
-mv -v ttf/* /usr/share/fonts/
-rm hack_font.zip
+if $wsl; then
+    mv -v ttf/* /usr/share/fonts/
+    rfc-cache -f -v
+else
+    if [ ! -d "$HOME/.fonts" ]; then
+        mkdir "$HOME/.fonts"
+    fi
+    mv -v ttf/* "$HOME/.fonts/"
+fi
+m hack_font.zip
 rm -Rf ttf/
-fc-cache -f -v
+
 
 # Install Github Cli
 
