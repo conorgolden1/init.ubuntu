@@ -12,6 +12,15 @@ default) in the /etc/xdg/nvim directory. This will install the neovim config
 system wide. If that is your desired behavior then your neovim config requires
 a sysinit.vim initialization file
 
+### Run
+For standard install see below:
+    sudo sh init.sh
+
+For just neovim see below:
+    sudo sh init_nvim.sh
+
+(For either run 'PackerSync' twice in neovim)
+
 ### Installed Apps
 
 1. Rustup
