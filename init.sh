@@ -9,10 +9,15 @@ if [ $? -ne 0 ]; then
  exit 1
 fi
 
+# Update first
+apt-get update
 
 # Checks to see if we are running in a WSL instance
 
 wsl=$( [ $(grep -io Microsoft /proc/version) = "microsoft" ] );
+
+# Install build-essential
+apt-get install build-essential
 
 
 # Install Rustup
@@ -65,7 +70,7 @@ if [ -d "/etc/xdg/nvim" ]; then
    echo "Removed old nvim config in /etc/xdg/nvim"
 fi
 
-git clone https://github.com/goldencm/init.lua.git /etc/xdg/nvim/
+git clone https://github.com/conorgolden1/init.lua.git /etc/xdg/nvim/
 
 # Install gcc
 
@@ -77,19 +82,22 @@ curl -LO https://github.com/BurntSushi/ripgrep/releases/download/13.0.0/ripgrep_
 dpkg -i ripgrep_13.0.0_amd64.deb
 rm ripgrep_13.0.0_amd64.deb
 
-
-# Run Packer Sync
-
-nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
-
 # Install Hack font
 
-curl -L --output hack_font.zip https://github.com/source-foundry/Hack/releases/download/v3.003/Hack-v3.003-ttf.zip
-unzip hack_font.zip
-mv -v ttf/* /usr/share/fonts/
+curl -L --output hack_font.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.0/Hack.zip
+unzip hack_font.zip -d ttf/
+if $wsl; then
+    mv -v ttf/* /usr/share/fonts/
+    rfc-cache -f -v
+else
+    if [ ! -d "$HOME/.fonts" ]; then
+        mkdir "$HOME/.fonts"
+    fi
+    mv -v ttf/* "$HOME/.fonts/"
+fi
 rm hack_font.zip
 rm -Rf ttf/
-fc-cache -f -v
+
 
 # Install Github Cli
 
@@ -108,3 +116,26 @@ gh auth login
 
 # Install nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Install Node
+nvm install node
+nvm use node
+
+# Install tree-sitter
+npm install -g tree-sitter
+
+# Run Packer Sync
+
+nvim --headless -c 'autocmd User PackerComplete quitall'
+nvim --headless -c 'PackerSync'
+nvim --headless -c 'PackerSync'
+
+# Install fd
+apt install fd-find
+
+# Install tmux
+apt  install tmux
