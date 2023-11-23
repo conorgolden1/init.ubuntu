@@ -9,6 +9,8 @@ if [ $? -ne 0 ]; then
  exit 1
 fi
 
+# Update first
+apt-get update
 
 # Checks to see if we are running in a WSL instance
 
