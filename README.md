@@ -14,11 +14,13 @@ a sysinit.vim initialization file
 
 ### Run
 For standard install see below:
-    sudo sh init.sh
-
+```
+sudo sh init.sh
+```
 For just neovim see below:
-    sudo sh init_nvim.sh
-
+```
+sudo sh init_nvim.sh
+```
 (For either run 'PackerSync' twice in neovim)
 
 ### Installed Apps
