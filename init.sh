@@ -138,4 +138,7 @@ nvim --headless -c 'PackerSync'
 apt install fd-find
 
 # Install tmux
-apt  install tmux
+apt install tmux
+
+# Install xclip
+apt install xclip
