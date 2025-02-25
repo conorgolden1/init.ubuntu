@@ -11,7 +11,7 @@ fi
 
 echo "Downloading neovim : ~/.nvim/nvim.appimage"
 
-curl -o ~/.nvim/nvim.appimage -L https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+curl -o ~/.nvim/nvim.appimage -L https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.appimage
 chmod u+x ~/.nvim/nvim.appimage
 
 cd ~/.nvim/ && { ./nvim.appimage --appimage-extract; cd -; }
