@@ -82,13 +82,17 @@ curl -LO https://github.com/BurntSushi/ripgrep/releases/download/13.0.0/ripgrep_
 dpkg -i ripgrep_13.0.0_amd64.deb
 rm ripgrep_13.0.0_amd64.deb
 
+# Install unzip
+
+apt install unzip -y
+
 # Install Hack font
 
 curl -L --output hack_font.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.0/Hack.zip
 unzip hack_font.zip -d ttf/
 if $wsl; then
     mv -v ttf/* /usr/share/fonts/
-    rfc-cache -f -v
+    fc-cache -f -v
 else
     if [ ! -d "$HOME/.fonts" ]; then
         mkdir "$HOME/.fonts"
